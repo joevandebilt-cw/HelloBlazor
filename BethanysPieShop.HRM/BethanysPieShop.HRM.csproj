@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="BethanysPieShop.HRM.csproj.user" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BethanysPieShop.HRM.Shared\BethanysPieShop.HRM.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Components\NewFolder\" />
+  </ItemGroup>
+
+</Project>
