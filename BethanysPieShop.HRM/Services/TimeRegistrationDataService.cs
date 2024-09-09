@@ -1,24 +1,31 @@
-﻿using BethanysPieShop.HRM.Repositories.Interfaces;
-using BethanysPieShop.HRM.Services.Interfaces;
+﻿using BethanysPieShop.HRM.Contracts.Repositories;
+using BethanysPieShop.HRM.Contracts.Services;
 using BethanysPieShop.HRM.Shared.Domain;
 
 namespace BethanysPieShop.HRM.Services
 {
-	public class TimeRegistrationDataService(ITimeRegistrationRepository repository) : ITimeRegistrationDataService
-	{
-		public async Task<IList<TimeRegistration>> GetPagesTimeRegistrationsForEmployee(int employeeId, int pageSize, int start)
-		{
-			return await repository.GetPagesTimeRegistrationsForEmployee(employeeId, pageSize, start);
-		}
+    public class TimeRegistrationDataService : ITimeRegistrationDataService
+    {
+        private readonly ITimeRegistrationRepository _timeRegistrationRepository;
 
-		public async Task<int> GetTimeRegistrationCountForEmployeeId(int employeeId)
-		{
-			return await repository.GetTimeRegistrationCountForEmployeeId(employeeId);
-		}
+        public TimeRegistrationDataService(ITimeRegistrationRepository timeRegistrationRepository)
+        {
+            _timeRegistrationRepository = timeRegistrationRepository;
+        }
 
-		public async Task<IList<TimeRegistration>> GetTimeRegistrationsForEmployee(int employeeId)
-		{
-			return await repository.GetTimeRegistrationsForEmployee(employeeId);
-		}
-	}
+        public async Task<List<TimeRegistration>> GetTimeRegistrationsForEmployee(int employeeId)
+        {
+            return await _timeRegistrationRepository.GetTimeRegistrationsForEmployee(employeeId);
+        }
+
+        public async Task<List<TimeRegistration>> GetPagedTimeRegistrationsForEmployee(int employeeId, int pageSize, int start)
+        {
+            return await _timeRegistrationRepository.GetPagedTimeRegistrationsForEmployee(employeeId, pageSize, start);
+        }
+
+        public async Task<int> GetTimeRegistrationCountForEmployeeId(int employeeId)
+        {
+            return await _timeRegistrationRepository.GetTimeRegistrationCountForEmployeeId(employeeId);
+        }
+    }
 }

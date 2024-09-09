@@ -1,36 +1,33 @@
-﻿using BethanysPieShop.HRM.Data;
-using BethanysPieShop.HRM.Repositories.Interfaces;
+﻿using BethanysPieShop.HRM.Contracts.Repositories;
+using BethanysPieShop.HRM.Data;
 using BethanysPieShop.HRM.Shared.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace BethanysPieShop.HRM.Repositories
 {
-	public class EmployeeRepository : IEmployeeRepository
-	{
-		private readonly AppDbContext _appDbContext;
-		public EmployeeRepository(IDbContextFactory<AppDbContext> dbContextFactory)
-		{
-			_appDbContext = dbContextFactory.CreateDbContext();
-		}
+    public class EmployeeRepository : IEmployeeRepository, IDisposable
+    {
+        private readonly AppDbContext _appDbContext;
 
-		public Task<bool> Delete(int id)
-		{
-			throw new NotImplementedException();
-		}
+        public EmployeeRepository(IDbContextFactory<AppDbContext> DbFactory)
+        {
+            _appDbContext = DbFactory.CreateDbContext();
+        }
 
-		public async Task<Employee> Get(int id)
-		{
-			return await _appDbContext.Employees.SingleAsync(e => e.EmployeeId == id);
-		}
+        public async Task<IEnumerable<Employee>> GetAllEmployees()
+        {
+            //return await Task.FromResult(_appDbContext.Employees);
+            return await _appDbContext.Employees.ToListAsync();
+        }
 
-		public async Task<IEnumerable<Employee>> GetAll()
-		{
-			return await _appDbContext.Employees.ToListAsync();
-		}
+        public async Task<Employee> GetEmployeeById(int employeeId)
+        {
+            return await _appDbContext.Employees.FirstOrDefaultAsync(c => c.EmployeeId == employeeId);
+        }
 
-		public Task<Employee> Update(Employee entity)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void Dispose()
+        {
+            _appDbContext.Dispose();
+        }
+    }
 }

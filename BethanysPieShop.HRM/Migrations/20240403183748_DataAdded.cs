@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BethanysPieShop.HRM.Migrations
 {
     /// <inheritdoc />
-    public partial class DataAddedMigration : Migration
+    public partial class DataAdded : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

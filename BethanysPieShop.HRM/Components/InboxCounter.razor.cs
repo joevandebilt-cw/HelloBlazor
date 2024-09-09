@@ -1,18 +1,21 @@
 ﻿using BethanysPieShop.HRM.State;
 using Microsoft.AspNetCore.Components;
 
-namespace BethanysPieShop.HRM.Components.Widgets
+namespace BethanysPieShop.HRM.Components
 {
-    public partial class InboxWidget
+    public partial class InboxCounter
     {
         [Inject]
         public ApplicationState ApplicationState { get; set; }
 
-        public int MessageCount { get; set; } = 0;
+        private int MessageCount;
 
         protected override void OnInitialized()
         {
-            MessageCount = ApplicationState.NumberOfMessages;
+            MessageCount = new Random().Next(10);
+
+            ApplicationState.NumberOfMessages = MessageCount;
         }
+
     }
 }
