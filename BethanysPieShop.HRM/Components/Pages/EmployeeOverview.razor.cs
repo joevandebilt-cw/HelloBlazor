@@ -1,16 +1,19 @@
-﻿using BethanysPieShop.HRM.Services;
+﻿using BethanysPieShop.HRM.Services.Interfaces;
 using BethanysPieShop.HRM.Shared.Domain;
+using Microsoft.AspNetCore.Components;
 
 namespace BethanysPieShop.HRM.Components.Pages
 {
-    public partial class EmployeeOverview
+	public partial class EmployeeOverview
     {
         public List<Employee> Employees { get; set; } = default!;
 
-        protected async override Task OnInitializedAsync()
+        [Inject]
+		public IEmployeeDataService? employeeDataService { get; set; }
+
+		protected async override Task OnInitializedAsync()
         {
-            await Task.Delay(2000);
-            Employees = MockDataService.Employees;
+            Employees =  (await employeeDataService.GetAllEmployees()).ToList();
         }
     }
 }

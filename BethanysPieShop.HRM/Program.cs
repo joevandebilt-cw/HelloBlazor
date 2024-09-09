@@ -1,4 +1,10 @@
 using BethanysPieShop.HRM.Components;
+using BethanysPieShop.HRM.Data;
+using BethanysPieShop.HRM.Repositories;
+using BethanysPieShop.HRM.Repositories.Interfaces;
+using BethanysPieShop.HRM.Services;
+using BethanysPieShop.HRM.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +12,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+builder.Services.AddDbContextFactory<AppDbContext>(options => 
+    options.UseSqlServer(
+        builder.Configuration["ConnectionStrings:DBConnectionString"]
+    )
+);
+//Repositories
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+//Services
+builder.Services.AddScoped<IEmployeeDataService, EmployeeDataService>();
+
+//Build
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
