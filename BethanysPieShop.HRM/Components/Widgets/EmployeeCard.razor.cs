@@ -7,5 +7,13 @@ namespace BethanysPieShop.HRM.Components.Widgets
     {
         [Parameter]
         public Employee Employee { get; set; } = default!;
-    }
+
+		protected override void OnInitialized()
+		{
+			if (string.IsNullOrWhiteSpace(Employee.LastName))
+			{
+				throw new Exception("Last name cannot be empty");
+			}
+		}
+	}
 }
