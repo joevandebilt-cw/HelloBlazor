@@ -15,7 +15,7 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddDbContextFactory<AppDbContext>(options =>
     options.UseSqlServer(
-        builder.Configuration["ConnectionStrings:DefaultConnection"]
+        builder.Configuration["ConnectionStrings:DBConnectionString"]
         ));
 
 
