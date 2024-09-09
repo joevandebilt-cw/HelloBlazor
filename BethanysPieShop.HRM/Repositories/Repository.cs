@@ -27,7 +27,7 @@ namespace BethanysPieShop.HRM.Repositories
 
 		public async Task<IEnumerable<T>> GetAll()
 		{
-			throw new NotImplementedException();
+			return await _entities.ToListAsync();
 		}
 
 		public async Task<T> Update(T entity)
