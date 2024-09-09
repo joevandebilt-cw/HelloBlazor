@@ -2,6 +2,7 @@
 using BethanysPieShop.HRM.Services.Interfaces;
 using BethanysPieShop.HRM.Shared.Domain;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.QuickGrid;
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 namespace BethanysPieShop.HRM.Components.Pages
@@ -23,6 +24,10 @@ namespace BethanysPieShop.HRM.Components.Pages
 			}
         }
 
+        protected IQueryable<TimeRegistration> itemsQueryable;
+        protected int queryableCount = 0;
+        public PaginationState pagination = new PaginationState { ItemsPerPage = 10 };
+
 		[Inject]
 		public required IEmployeeDataService employeeDataService { get; set; }
 
@@ -43,6 +48,9 @@ namespace BethanysPieShop.HRM.Components.Pages
 		{
 		    Employee = await employeeDataService.GetEmployeeDetails(EmployeeId);
             TimeRegistrations = (await timeRegistrationDataService.GetTimeRegistrationsForEmployee(EmployeeId)).ToList();
+
+            itemsQueryable = (await timeRegistrationDataService.GetTimeRegistrationsForEmployee(EmployeeId)).AsQueryable();
+            queryableCount = itemsQueryable.Count();
         }
 
         private void ChangeHolidayState()
