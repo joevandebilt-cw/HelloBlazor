@@ -7,16 +7,23 @@
 
 @if (Employees == null)
 {
-    <p><em>Loading...</em></p>
+	<p><em>Loading...</em></p>
 }
 else
 {
-    <div class="row">
-        @foreach(var employee in Employees)
-        {
-            <div class="col-6 col-lg-4 col-xl-3 col-xxl-3">
-                <EmployeeCard Employee="employee"></EmployeeCard>
-            </div>
-        }
-    </div>
+	<div class="row">
+		@foreach (var employee in Employees)
+		{
+			<div class="col-6 col-lg-4 col-xl-3 col-xxl-3">
+				<ErrorBoundary>
+					<ChildContent>
+						<EmployeeCard Employee="employee"></EmployeeCard>
+					</ChildContent>
+					<ErrorContent>
+						<p>Something went wrong!</p>
+					</ErrorContent>
+				</ErrorBoundary>
+			</div>
+		}
+	</div>
 }
