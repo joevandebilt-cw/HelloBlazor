@@ -19,9 +19,11 @@ builder.Services.AddDbContextFactory<AppDbContext>(options =>
 );
 //Repositories
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<ITimeRegistrationRepository, TimeRegistrationRepository>();
 
 //Services
 builder.Services.AddScoped<IEmployeeDataService, EmployeeDataService>();
+builder.Services.AddScoped<ITimeRegistrationDataService, TimeRegistrationDataService>();
 
 builder.Services.AddScoped<AppState>();
 
