@@ -14,8 +14,4 @@
     <ProjectReference Include="..\BethanysPieShop.HRM.Shared\BethanysPieShop.HRM.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Components\NewFolder\" />
-  </ItemGroup>
-
 </Project>
