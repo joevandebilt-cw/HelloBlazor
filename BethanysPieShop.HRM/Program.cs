@@ -18,16 +18,20 @@ builder.Services.AddDbContextFactory<AppDbContext>(options =>
         builder.Configuration["ConnectionStrings:DBConnectionString"]
         ));
 
-
+//Data services
+builder.Services.AddScoped<ICountryDataService, CountryDataService>();
 builder.Services.AddScoped<IEmployeeDataService, EmployeeDataService>();
+builder.Services.AddScoped<IJobCategoryDataService, JobCategoryDataService>();
 builder.Services.AddScoped<ITimeRegistrationDataService, TimeRegistrationDataService>();
 
-
-builder.Services.AddScoped<ITimeRegistrationRepository, TimeRegistrationRepository>();
+//Repositories
+builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IJobCategoryRepository, JobCategoryRepository>();
+builder.Services.AddScoped<ITimeRegistrationRepository, TimeRegistrationRepository>();
 
+//App State
 builder.Services.AddScoped<ApplicationState>();
-
 
 var app = builder.Build();
 

@@ -1,5 +1,6 @@
 ﻿using BethanysPieShop.HRM.Shared.Domain;
 using Microsoft.AspNetCore.Components;
+using System.Drawing;
 
 namespace BethanysPieShop.HRM.Components
 {
@@ -11,12 +12,17 @@ namespace BethanysPieShop.HRM.Components
         [Parameter]
         public EventCallback<Employee> EmployeeQuickViewClicked { get; set; }
 
+        public string EmployeeImage 
+        { 
+            get
+            {
+                if (Employee?.ImageContent == null) return null!;
+                return $"data:image/{Path.GetExtension(Employee.ImageName)!.Replace(".","")};base64,{Convert.ToBase64String(Employee.ImageContent)}";
+            }
+        }
+
         protected override void OnInitialized()
         {
-            //if (string.IsNullOrEmpty(Employee.LastName))
-            //{
-            //    throw new Exception("Last name can't be empty");
-            //}
         }
 
 
