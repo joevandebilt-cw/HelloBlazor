@@ -14,31 +14,12 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" Version="8.0.0" />
-
-	</ItemGroup>
-
-
-
-	<ItemGroup>
-		<Content Remove="Components\Pages\EmployeeCard.razor" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\BethanysPieShop.HRM.Client\BethanysPieShop.HRM.Client.csproj" />
 		<ProjectReference Include="..\BethanysPieShop.HRM.Shared\BethanysPieShop.HRM.Shared.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<UpToDateCheckInput Remove="Components\Pages\EmployeeCard.razor" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<_ContentIncludedByDefault Remove="Components\Pages\EmployeeCard.razor" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Include="Components\EmployeeCard.razor" />
-		<None Include="Components\Widgets\EmployeeCountWidget.razor" />
-		<None Include="Components\Widgets\InboxWidget.razor" />
 	</ItemGroup>
 
 </Project>

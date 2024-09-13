@@ -1,5 +1,5 @@
-﻿using BethanysPieShop.HRM.Contracts.Repositories;
-using BethanysPieShop.HRM.Contracts.Services;
+﻿using BethanysPieShop.HRM.Shared.Contracts.Repositories;
+using BethanysPieShop.HRM.Shared.Contracts.Services;
 using BethanysPieShop.HRM.Shared.Domain;
 
 namespace BethanysPieShop.HRM.Services

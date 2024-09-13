@@ -1,11 +1,11 @@
-﻿using BethanysPieShop.HRM.Contracts.Repositories;
-using BethanysPieShop.HRM.Data;
+﻿using BethanysPieShop.HRM.Data;
+using BethanysPieShop.HRM.Shared.Contracts.Repositories;
 using BethanysPieShop.HRM.Shared.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace BethanysPieShop.HRM.Repositories
 {
-	public class EmployeeRepository : IEmployeeRepository, IDisposable
+    public class EmployeeRepository : IEmployeeRepository, IDisposable
     {
         private readonly AppDbContext _appDbContext;
 
