@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace BethanysPieShop.HRM.Shared.Domain
 {
     public class Employee
@@ -58,5 +59,24 @@ namespace BethanysPieShop.HRM.Shared.Domain
 
         public byte[]? ImageContent { get; set; }
         public string? ImageName { get; set; }
+
+        [NotMapped]
+		public string ImageSrc
+		{
+			get
+			{
+                if (this?.ImageContent == null) return $"https://gillcleerenpluralsight.blob.core.windows.net/person/{this.EmployeeId}.jpg";
+                return $"data:image/{Path.GetExtension(this.ImageName)!.Replace(".", "")};base64,{Convert.ToBase64String(this.ImageContent)}";
+			}
+		}
+
+        [NotMapped]
+        public string ImageAlt
+        {
+            get
+            {
+                return this.ImageName ?? $"A picture of {this.FirstName}";
+            }
+        }
     }
 }

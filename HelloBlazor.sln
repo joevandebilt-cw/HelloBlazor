@@ -19,11 +19,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShop.HRM.Shared"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShop.HRM", "BethanysPieShop.HRM\BethanysPieShop.HRM.csproj", "{F31CA89C-EC2E-4F15-A77E-B5D384FC91E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloBlazor.WASM", "HelloBlazor.WASM\HelloBlazor.WASM\HelloBlazor.WASM.csproj", "{F8E7D768-32F0-4564-A297-561E63E0FAD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloBlazor.WASM", "HelloBlazor.WASM\HelloBlazor.WASM\HelloBlazor.WASM.csproj", "{F8E7D768-32F0-4564-A297-561E63E0FAD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloBlazor.WASM.Client", "HelloBlazor.WASM\HelloBlazor.WASM.Client\HelloBlazor.WASM.Client.csproj", "{57502E96-F303-41BF-8FB5-E0D1F04393C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloBlazor.WASM.Client", "HelloBlazor.WASM\HelloBlazor.WASM.Client\HelloBlazor.WASM.Client.csproj", "{57502E96-F303-41BF-8FB5-E0D1F04393C9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShop.HRM.Client", "BethanysPieShop.HRM.Client\BethanysPieShop.HRM.Client.csproj", "{A0E4581A-31CC-49F0-8B19-9BDCE0C26E50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Razor Library", "Razor Library", "{A6E3F064-784B-46D6-998D-6776A38E9433}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloBlazor.RazorLibrary", "HelloBlazor.RazorLibrary\HelloBlazor.RazorLibrary.csproj", "{DA78B25F-B805-44AC-889F-E458594FC5DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShop.HRM.ComponentsLibrary", "BethanysPieShop.HRM.ComponentsLibrary\BethanysPieShop.HRM.ComponentsLibrary.csproj", "{24092F87-5BFC-4334-80B5-A60B0702CD1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShop.HRM.Tests", "BethanysPieShop.HRM.Tests\BethanysPieShop.HRM.Tests.csproj", "{4E99C60C-411E-439D-9FF7-DD5F64C61367}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +75,18 @@ Global
 		{A0E4581A-31CC-49F0-8B19-9BDCE0C26E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0E4581A-31CC-49F0-8B19-9BDCE0C26E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0E4581A-31CC-49F0-8B19-9BDCE0C26E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA78B25F-B805-44AC-889F-E458594FC5DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA78B25F-B805-44AC-889F-E458594FC5DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA78B25F-B805-44AC-889F-E458594FC5DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA78B25F-B805-44AC-889F-E458594FC5DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24092F87-5BFC-4334-80B5-A60B0702CD1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24092F87-5BFC-4334-80B5-A60B0702CD1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24092F87-5BFC-4334-80B5-A60B0702CD1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24092F87-5BFC-4334-80B5-A60B0702CD1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E99C60C-411E-439D-9FF7-DD5F64C61367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E99C60C-411E-439D-9FF7-DD5F64C61367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E99C60C-411E-439D-9FF7-DD5F64C61367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E99C60C-411E-439D-9FF7-DD5F64C61367}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +101,9 @@ Global
 		{F8E7D768-32F0-4564-A297-561E63E0FAD5} = {017E6B48-E210-456F-B66F-FFB83DDA71EC}
 		{57502E96-F303-41BF-8FB5-E0D1F04393C9} = {017E6B48-E210-456F-B66F-FFB83DDA71EC}
 		{A0E4581A-31CC-49F0-8B19-9BDCE0C26E50} = {6E15949A-7277-4ECD-A002-B505C239E547}
+		{DA78B25F-B805-44AC-889F-E458594FC5DE} = {A6E3F064-784B-46D6-998D-6776A38E9433}
+		{24092F87-5BFC-4334-80B5-A60B0702CD1C} = {6E15949A-7277-4ECD-A002-B505C239E547}
+		{4E99C60C-411E-439D-9FF7-DD5F64C61367} = {6E15949A-7277-4ECD-A002-B505C239E547}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE0E3994-C9C6-47CA-82D3-1EC0525119C4}

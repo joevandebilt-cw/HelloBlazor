@@ -7,14 +7,7 @@
         <div class="card-body employee-card text-center">
 
             <div class="mb-3">
-                @if (EmployeeImage != null)
-                {
-                    <img src="@EmployeeImage" alt="@Employee.ImageName" class="employee-img rounded-circle img-fluid" />
-                }
-                else 
-                {
-                    <img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{Employee.EmployeeId}.jpg")" alt="Picture of @Employee.FirstName" class="employee-img rounded-circle img-fluid" />
-                }
+                <img src="@Employee.ImageSrc" alt="@Employee.ImageAlt" class="employee-img rounded-circle img-fluid" />
             </div>
             <a href="@($"employeedetail/{Employee.EmployeeId}")" class="btn btn-outline-primary btn-sm mb-1">
                 Full details

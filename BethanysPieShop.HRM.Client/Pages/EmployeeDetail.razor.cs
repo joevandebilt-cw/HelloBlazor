@@ -1,5 +1,6 @@
 ﻿using BethanysPieShop.HRM.Shared.Contracts.Services;
 using BethanysPieShop.HRM.Shared.Domain;
+using BethanysPieShop.HRM.Shared.Model;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
@@ -19,13 +20,26 @@ namespace BethanysPieShop.HRM.Client.Pages
         public List<TimeRegistration> TimeRegistrations { get; set; } = [];
 
         public Employee Employee { get; set; } = new Employee();
-        private float itemHeight = 50;
-        protected IQueryable<TimeRegistration>? itemsQueryable;
+
+        public List<Marker> MapMarkers { get; set; } = new();
+
+
 
         protected async override Task OnInitializedAsync()
         {
             Employee = await EmployeeDataService.GetEmployeeDetails(EmployeeId);
             //TimeRegistrations = await TimeRegistrationDataService.GetTimeRegistrationsForEmployee(EmployeeId);
+
+            if (Employee.Longitude.HasValue && Employee.Latitude.HasValue)
+            {
+                MapMarkers.Add(new()
+                {
+                    Description = $"{Employee.FirstName} {Employee.LastName}",
+                    X = Employee.Longitude.Value,
+                    Y = Employee.Latitude.Value,
+                    ShowPopup = false
+                });
+            }
         }
 
         private void ChangeHolidayState()

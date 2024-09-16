@@ -1,6 +1,7 @@
 ﻿using BethanysPieShop.HRM.Shared.Contracts.Services;
 using BethanysPieShop.HRM.Shared.Domain;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace BethanysPieShop.HRM.Client.Pages
 {

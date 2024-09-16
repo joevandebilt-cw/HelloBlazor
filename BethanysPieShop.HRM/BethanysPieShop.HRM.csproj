@@ -15,11 +15,19 @@
 		</PackageReference>
 		<PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" Version="8.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\BethanysPieShop.HRM.Client\BethanysPieShop.HRM.Client.csproj" />
+		<ProjectReference Include="..\BethanysPieShop.HRM.ComponentsLibrary\BethanysPieShop.HRM.ComponentsLibrary.csproj" />
 		<ProjectReference Include="..\BethanysPieShop.HRM.Shared\BethanysPieShop.HRM.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\scripts\scripts.js">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 
 </Project>

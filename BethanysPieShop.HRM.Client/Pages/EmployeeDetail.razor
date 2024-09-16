@@ -1,6 +1,6 @@
 ﻿@page "/employeedetail/{EmployeeId:int}"
 
-@rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
+@rendermode InteractiveWebAssembly
 
 <section class="employee-detail">
 	<h1 class="page-title">
@@ -11,7 +11,7 @@
 	<br />
 	<div class="col-12 row">
 		<div class="col-2 text-center">
-			<img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{Employee.EmployeeId}.jpg")" class="img-fluid rounded-circle employee-detail-img" />
+			<img src="@Employee.ImageSrc" alt="@Employee.ImageAlt" class="img-fluid rounded-circle employee-detail-img" />
 
 			@if (Employee.IsOnHoliday)
 			{
@@ -135,7 +135,10 @@
 						<label type="text" readonly class="form-control-plaintext">@Employee.ExitDate?.ToShortDateString()</label>
 					</div>
 				</div>
+			</div>
 
+			<div class="col-12 col-xxl-4">
+				<Map Zoom="10" Markers="MapMarkers"></Map>
 			</div>
 		</div>
 	</div>
