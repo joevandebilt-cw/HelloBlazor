@@ -31,11 +31,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShop.HRM.Compone
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShop.HRM.Tests", "BethanysPieShop.HRM.Tests\BethanysPieShop.HRM.Tests.csproj", "{4E99C60C-411E-439D-9FF7-DD5F64C61367}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloBlazor.Maui", "HelloBlazor.Maui\HelloBlazor.Maui.csproj", "{3E480E89-0137-469A-992C-9572B1142B5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloBlazor.Maui", "HelloBlazor.Maui\HelloBlazor.Maui.csproj", "{3E480E89-0137-469A-992C-9572B1142B5F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoffeeBrowser", "CoffeeBrowser", "{F3E1DD09-B659-4153-A616-81AF366C8844}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeBrowser.Maui", "CoffeeBrowser.Maui\CoffeeBrowser.Maui.csproj", "{2601F6C2-18CB-4109-8AFF-B9A54F1CB78A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeBrowser.Maui", "CoffeeBrowser.Maui\CoffeeBrowser.Maui.csproj", "{2601F6C2-18CB-4109-8AFF-B9A54F1CB78A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
