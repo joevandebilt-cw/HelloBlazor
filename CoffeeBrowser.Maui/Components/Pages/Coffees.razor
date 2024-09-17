@@ -1,7 +1,12 @@
 ﻿@page "/coffees"
+@inject ICoffeeService coffeeService
 
 <h1>Coffees</h1>
 
 @code {
-
+	private IEnumerable<Coffee>? coffees = null;
+	protected override async Task OnInitializedAsync()
+	{
+		coffees = await coffeeService.LoadCoffeeAsync();
+	}
 }
