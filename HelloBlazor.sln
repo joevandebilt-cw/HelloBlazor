@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeBrowser.Maui", "Coffe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeBrowser.Library", "CoffeeBrowser.Library\CoffeeBrowser.Library.csproj", "{48F749E1-6FF0-4D15-957F-098976CFAE22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeBrowser.BlazorWeb", "CoffeeBrowser.BlazorWeb\CoffeeBrowser.BlazorWeb.csproj", "{5CB378B4-DD92-45F7-95F9-5072A33614B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,10 @@ Global
 		{48F749E1-6FF0-4D15-957F-098976CFAE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48F749E1-6FF0-4D15-957F-098976CFAE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48F749E1-6FF0-4D15-957F-098976CFAE22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CB378B4-DD92-45F7-95F9-5072A33614B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CB378B4-DD92-45F7-95F9-5072A33614B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CB378B4-DD92-45F7-95F9-5072A33614B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CB378B4-DD92-45F7-95F9-5072A33614B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +135,7 @@ Global
 		{3E480E89-0137-469A-992C-9572B1142B5F} = {017E6B48-E210-456F-B66F-FFB83DDA71EC}
 		{2601F6C2-18CB-4109-8AFF-B9A54F1CB78A} = {F3E1DD09-B659-4153-A616-81AF366C8844}
 		{48F749E1-6FF0-4D15-957F-098976CFAE22} = {F3E1DD09-B659-4153-A616-81AF366C8844}
+		{5CB378B4-DD92-45F7-95F9-5072A33614B1} = {F3E1DD09-B659-4153-A616-81AF366C8844}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE0E3994-C9C6-47CA-82D3-1EC0525119C4}
