@@ -1,17 +1,13 @@
-﻿namespace CoffeeBrowser.Maui.Data;
+﻿using System.Net.Http.Json;
+
+namespace CoffeeBrowser.Maui.Data;
 
 public class CoffeeService : ICoffeeService
 {
-	public async Task<IEnumerable<Coffee>> LoadCoffeeAsync()
+	private readonly HttpClient _httpClient = new();
+	public async Task<IEnumerable<Coffee>?> LoadCoffeeAsync()
 	{
-		Coffee[] coffees = [
-			new Coffee("Cappucino", "Coffee with milk foam"),
-			new Coffee("Doppio", "Double Espresso")
-		];
-
-		//Simulate server work
-		await Task.Delay(50);
-
+		var coffees = await _httpClient.GetFromJsonAsync<IEnumerable<Coffee>>("https://thomasclaudiushuber.com/pluralsight/coffees.json");
 		return coffees;
 	}
 }

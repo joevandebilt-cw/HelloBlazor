@@ -2,5 +2,5 @@
 
 public interface ICoffeeService
 {
-	Task<IEnumerable<Coffee>> LoadCoffeeAsync();
+	Task<IEnumerable<Coffee>?> LoadCoffeeAsync();
 }
