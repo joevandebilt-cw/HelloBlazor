@@ -1,5 +1,5 @@
 ﻿@page "/coffees"
-@inject ICoffeeService coffeeService
+@inject ICoffeeService CoffeeService
 
 <h1>Coffees</h1>
   @if (coffees is null)
@@ -31,6 +31,6 @@ else
 	private IEnumerable<Coffee>? coffees = null;
 	protected override async Task OnInitializedAsync()
 	{
-		coffees = await coffeeService.LoadCoffeeAsync();
+		coffees = await CoffeeService.LoadCoffeeAsync();
 	}
 }
