@@ -26,7 +26,8 @@ public class CustomAuthStateProvider : AuthenticationStateProvider
 	private Task<ClaimsPrincipal> LoginWithExternalProviderAsync()
 	{
 		Claim[] claims = [
-			new Claim(ClaimTypes.Name, "Joe")
+			new Claim(ClaimTypes.Name, "Joe"),
+			new Claim(ClaimTypes.Role, "Admin")
 		];
 		var identity = new ClaimsIdentity(claims, "Custom");
 		var authenticatedUser = new ClaimsPrincipal(identity);
